@@ -30,13 +30,6 @@ namespace MusicTrack.Middlewares
                 switch (error)
                 {
                     case UsernameAlreadyExistsException:
-                    //case EnterValidCredentialsException:
-                    //case PlaylistDurationExceededException:
-                    //case PlaylistIsEmptyException:
-                    //case TrackAlreadyIncludedInPlaylistException:
-                    //case TrackDoesNotBelongToAlbumException:
-                    //case TrackIsNotIncludedInPlaylistException:
-                    //case TrackTypeNotValidException:
                     case ErrorCreatingUser:
                     case AddRoleToUserException:
                         context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -45,6 +38,7 @@ namespace MusicTrack.Middlewares
                         : new SnookerException("Internal server error!");
                         break;
                     case PlayerNotFoundException:
+                    case MatchNotFoundException:
                         context.Response.StatusCode = (int)HttpStatusCode.NotFound;
                         response = _environment.IsDevelopment() ?
                         new SnookerException(error.Message) { StackTrace = error.StackTrace?.ToString() }
