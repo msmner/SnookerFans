@@ -1,0 +1,18 @@
+<div *ngIf="match" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{match.playerOneUserName}} vs {{match.playerTwoUserName}}</h5>
+        <p class="card-text">{{match.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Date played - {{match.createdOn | date: 'dd MMM yyyy'}}</li>
+        <li class="list-group-item">Score - {{match.score}}</li>
+        <li class="list-group-item">Century breaks - {{match.playerOneCenturyBreaks}} - {{match.playerTwoCenturyBreaks}}
+        </li>
+        <li class="list-group-item">Half Century Breaks - {{match.playerOneHalfCenturyBreaks}} -
+            {{match.playerTwoHalfCenturyBreaks}}</li>
+        <li class="list-group-item">Maximums - {{match.playerOneMaximums}} - {{match.playerTwoMaximums}}</li>
+    </ul>
+    <div *appHasRole='["admin"]' class="card-body">
+        <button class="card-link" type="button" (click)="delete()">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Wins</th>
+        <th scope="col">Matches</th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let player of players;let i=index;">
+            <tr>
+                <th scope="row">{{i + 1}}</th>
+                <td>{{player.userName}}</td>
+                <td>{{player.nationality}}</td>
+                <td>{{player.wins}}</td>
+                <td><button routerLink="/players/{{player.userName}}/matches" class="card-link" type="button">Matches</button>
+                </td>
+              </tr>
+        </ng-container>
+    </tbody>
+  </table>

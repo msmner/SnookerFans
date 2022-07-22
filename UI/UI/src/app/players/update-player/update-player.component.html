@@ -1,0 +1,19 @@
+<div *ngIf="player">
+    <form [formGroup]='playerForm' (ngSubmit)="playerForm.valid && update()" autocomplete="off">
+        <h2 class="text-center text-primary">Update player</h2>
+        <hr>
+
+        <app-text-input [formControl]='playerForm.controls["username"]' [label]='"Username"'>{{player.userName}}
+        </app-text-input>
+        <app-text-input [formControl]='playerForm.controls["nationality"]' [label]='"Nationality"'>
+            {{player.nationality}}
+        </app-text-input>
+        <app-text-input [formControl]='playerForm.controls["description"]' [label]='"Description"'>
+            {{player.description}}
+        </app-text-input>
+
+        <div class="form-group text-center">
+            <button [disabled]='!playerForm.valid' class="btn btn-success mr-2" type="submit">Update</button>
+        </div>
+    </form>
+</div>

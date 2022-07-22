@@ -1,0 +1,12 @@
+<form [formGroup]='playerForm' (ngSubmit)="playerForm.valid && create()" autocomplete="off">
+    <h2 class="text-center text-primary">Create a player</h2>
+    <hr>
+    
+    <app-text-input [formControl]='playerForm.controls["username"]' [label]='"Username"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["nationality"]' [label]='"Nationality"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["description"]' [label]='"Description"'></app-text-input>
+    
+    <div class="form-group text-center">
+        <button [disabled]='!playerForm.valid' class="btn btn-success mr-2" type="submit">Create</button>
+    </div>
+    </form>

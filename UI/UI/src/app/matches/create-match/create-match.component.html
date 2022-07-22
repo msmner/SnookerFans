@@ -1,0 +1,19 @@
+<form [formGroup]='playerForm' (ngSubmit)="playerForm.valid && create()" autocomplete="off">
+    <h2 class="text-center text-primary">Create a match</h2>
+    <hr>
+    
+    <app-text-input [formControl]='playerForm.controls["playerOneUserName"]' [label]='"Player One Username"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerTwoUserName"]' [label]='"Player Two Username"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["score"]' [label]='"Score"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerOneCenturyBreaks"]' [label]='"Player One Centurybreaks"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerTwoCenturyBreaks"]' [label]='"Player Two Centurybreaks"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerOneHalfCenturyBreaks"]' [label]='"Player One Half Centurybreaks"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerTwoHalfCenturyBreaks"]' [label]='"Player Two Half Centurybreaks"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerOneMaximums"]' [label]='"Player One Maximums"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["playerTwoMaximums"]' [label]='"Player Two Maximums"'></app-text-input>
+    <app-text-input [formControl]='playerForm.controls["description"]' [label]='"Description"'></app-text-input>
+    
+    <div class="form-group text-center">
+        <button [disabled]='!playerForm.valid' class="btn btn-success mr-2" type="submit">Create</button>
+    </div>
+    </form>

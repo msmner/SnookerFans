@@ -1,0 +1,19 @@
+<div *ngIf="player" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{player.userName}}</h5>
+    <p class="card-text">{{player.description}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nationality - {{player.nationality}}</li>
+    <li class="list-group-item">Century breaks - {{player.centuryBreaks}}</li>
+    <li class="list-group-item">Half Century Breaks - {{player.halfCenturyBreaks}}</li>
+    <li class="list-group-item">Lifetime Maximums - {{player.lifeTimeMaximums}}</li>
+    <li class="list-group-item">Wins - {{player.wins}}</li>
+  </ul>
+  <div class="card-body">
+    <button *appHasRole='["admin"]' routerLink="/players/update/{{player.userName}}" class="card-link"
+      type="button">Update</button>
+    <button *appHasRole='["admin"]' class="card-link" type="button" (click)="delete()">Delete</button>
+    <button routerLink="/players/{{player.userName}}/matches" class="card-link" type="button">Matches</button>
+  </div>
+</div>
